@@ -1,7 +1,7 @@
 <aside id="sidebar-wrapper">
     @if (Auth::check())
         <div class="sidebar-brand">
-            <a href="/">{{ Str::upper(Auth::user()->role) }}</a>
+            <a href="/">{{ Str::upper(Auth::user()->role) }} V1</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
             <a href="/">{{ Str::upper(Auth::user()->role) }}</a>
