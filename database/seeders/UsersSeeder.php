@@ -19,7 +19,7 @@ class UsersSeeder extends Seeder
         $users = new pengguna();
         $users->uuid = 'T3119051';
         $users->name = 'Mohamad Rizky Isa';
-        $users->email = 'kikiisa89@gmail.com';
+        $users->email = 'samsul@gmail.com';
         $users->role = 'admin';
         $users->phone = '082393508734';
         $users->password = bcrypt('123');
@@ -28,8 +28,8 @@ class UsersSeeder extends Seeder
 
         User::create([
             'uuid' => Uuid::uuid4()->toString(),
-            'name' => 'Pratiwi Syaiful Bayahu',
-            'email' => 'pratiwi89@gmail.com',
+            'name' => 'Mohamad Rizky Isa',
+            'email' => 'kikiisa89@gmail.com',
             'phone' => '082393508734',
             'password' => bcrypt("123"),
             'role' => 'users',
