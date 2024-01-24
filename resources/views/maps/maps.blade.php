@@ -49,6 +49,7 @@
                                                 <td>{{ $item->longitude }}</td>
                                                 <td>{{ $item->categori->nama }}</td>
                                                 <td>
+                                                    
                                                     <form action="{{ route('hapus_pemetaan',$item->id) }}" method="POST">
                                                         @method("DELETE")
                                                         @csrf

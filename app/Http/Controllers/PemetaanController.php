@@ -244,7 +244,7 @@ class PemetaanController extends Controller
     public function destroy($id)
     {
         $service = new MyService();
-        $data = Peta::findOrFail($id)->first();
+        $data = Peta::find($id);
         $service->removeMultipleImage($data->image);
         $data->delete();
         if ($data) {
