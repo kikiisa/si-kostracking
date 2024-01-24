@@ -92,6 +92,7 @@
         </div>
     </div>
 </div>
+<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
 <script src="{{ asset('vendor/leaflet/leaflet.js') }}"></script>
 <script src="{{ asset('vendor/routing/leaflet-routing-machine.js') }}"></script>
 <script src="{{ asset('vendor/routing/Control.Geocoder.js') }}"></script>
@@ -137,7 +138,7 @@
                                     </div>`
                             })
                     $(".cr-2").html(html)
-                    console.log(images)
+                    
                 }
             })
             .catch((error) => {
@@ -242,6 +243,7 @@
                     fetch(`/api-peta/${minValue.lat}/position/${minValue.lon}`)
                         .then(response2 => response2.json())
                         .then((datass) => {
+                            
                             L.Routing.control({
                                 waypoints: [
                                     L.latLng(latitude, longitude),

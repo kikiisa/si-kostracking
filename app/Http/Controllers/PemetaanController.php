@@ -125,7 +125,7 @@ class PemetaanController extends Controller
     public function show($id)
     {
         $service = new MyService();
-        $data = Peta::with("categori")->where("uuid",$id)->first();
+        $data = Peta::with("categori","user")->where("uuid",$id)->first();
         $image = $service->returnStringMerge($data->image);
         return view('frontend.home.detail',[
             'service' => $service,

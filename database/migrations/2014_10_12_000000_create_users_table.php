@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('phone',14);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string("dokument")->nullable();
             $table->enum("status",['nonaktif','aktif']);
             $table->rememberToken();
             $table->timestamps();

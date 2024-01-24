@@ -44,7 +44,7 @@ class HomeController extends Controller
     }
     public function show($id)
     {
-        $wisata = Maping::with("categori")->paginate(10);
+        $wisata = Maping::with("categori","user")->paginate(10);
         $kategori = WisataCategory::all(); 
 
         $service = new MyService();

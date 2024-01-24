@@ -44,7 +44,7 @@
                        {!! $data->deskripsi_full !!}
                        <button class="btn btn-primary fw-bold">Jam Buka : {{$data->jam_buka}}</button>
                        <button class="btn btn-danger fw-bold">Jam Tutup : {{$data->jam_tutup}}</button>
-                       <a href="/" class="btn btn-warning">Kembali</a>
+                       <a href="https://api.whatsapp.com/send?phone={{$data->user->phone}}&text=Apakah anda ingin memesan kost {{$data->nama_titik}} dengan harga Rp,{{number_format($price, 0, ',', '.')}}" class="btn btn-success fw-bold"><i class="fa fa-phone"></i> Whatsapps</a>
                     </div>
                 </div>
             </div>
@@ -128,7 +128,7 @@
                                 }).addTo(map);
                                 L.marker([minValue.lat, minValue.lon],{
                                     icon: L.icon({
-                                        iconUrl: `/assets/image/${datass.categori.slug}.png`,
+                                        iconUrl: `/theme/img/home.png`,
                                         iconSize: [30,
                                             30
                                         ], // size of the icon

@@ -10,6 +10,7 @@ use Ramsey\Uuid\Uuid;
 
 class AuthController extends Controller
 {
+    private $path = 'assets/files/';
     public function index()
     {
         return view('frontend.auth.index',['title' => 'LOGIN - SISTEM-INFORMASI-GIS']);
@@ -40,15 +41,33 @@ class AuthController extends Controller
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:8',
             'phone' => 'required|min:12',
-            'confirm' => 'required|same:password'
+            'confirm' => 'required|same:password',
+            'legalitas' => 'required|mimes:pdf|max:2048',
+        ],[
+            'name.required' => 'Nama Tidak Boleh Kosong',
+            'email.required' => 'Email Tidak Boleh Kosong',
+            'email.email' => 'Email Tidak Valid',
+            'email.unique' => 'Email Telah Digunakan',
+            'password.required' => 'Password Tidak Boleh Kosong',
+            'password.min' => 'Password Minimal 8 Karakter',
+            'phone.required' => 'Nomor Telepon Tidak Boleh Kosong',
+            'phone.min' => 'Nomor Telepon Minimal 12 Karakter',
+            'confirm.required' => 'Konfirmasi Password Tidak Boleh Kosong',
+            'confirm.same' => 'Konfirmasi Password Tidak Sama',
+            'legalitas.required' => 'Legalitas Tidak Boleh Kosong',
+            'legalitas.mimes' => 'Legalitas Harus Berupa PDF',
+            'legalitas.max' => 'Legalitas Maksimal 2 MB',
         ]);
-
+        $files = $request->file("legalitas");
+        $newName = $files->hashName();
+        $files->move($this->path,$newName);
         $data = User::create([
             'uuid' => Uuid::uuid4()->toString(),
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
             'role' => 'users',
+            'dokument' => $this->path . $newName,
             'password' => bcrypt($request->password),
             'status' => 'nonaktif'
         ]);

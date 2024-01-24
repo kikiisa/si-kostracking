@@ -25,6 +25,7 @@
                                             <th>Phone</th>
                                             <th>Status</th>
                                             <th>Role</th>
+                                            <th>Legalitas Pajak</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -48,12 +49,17 @@
                                             </td>
                                             <td>{{$item->role}}</td>
                                             <td>
+                                                <a href="javascript:void(0)" class="btn btn-primary" onclick="return openModal('{{$item->dokument}}')">Dokument Legalitas</a>
+                                            </td>
+                                            <td>
                                                 <form action="{{Route('user.delete',$item->id)}}" method="post">
                                                     @csrf
                                                     @method("DELETE")
                                                     <button class="btn btn-danger" onclick="return confirm('apakah anda yakin User Ini akan Di Hapus ?')"><i class="fa fa-trash"></i></button>
+                                                    
                                                 </form>
                                             </td>
+                                            
                                           </tr>
                                       @endforeach
                                     </tbody>
@@ -65,4 +71,33 @@
             </div>
         </div>
     </section>
+    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">File Legalitas Pajak</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <iframe src="" type="application/pdf" height="600px" class="legalitasdoc w-100" frameborder="0"></iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const documentShow = document.querySelector(".legalitasdoc");
+        const openModal = (data) => 
+        {
+            documentShow.src = data
+            $('#modal').modal({
+                backdrop: 'static',
+                keyboard: false
+            }).show()
+        }
+    </script>
 @endsection

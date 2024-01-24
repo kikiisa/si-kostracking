@@ -17,4 +17,9 @@ class Maping extends Model
     {
         return $this->belongsTo(WisataCategory::class,'bahari_id');
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class,'user_id');
+    }
 }
