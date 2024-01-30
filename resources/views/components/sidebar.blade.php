@@ -50,8 +50,4 @@
         <li class="{{ Route::current()->getName() == 'user.profile' ? 'active' : '' }}"><a class="nav-link"
         href="{{ Route('user.profile') }}"><i class="fas fa-user"></i> <span>Profile</span></a></li>
     </ul>
-    <ul class="sidebar-menu">
-        <li class="{{ Route::current()->getName() == 'user.setpassword' ? 'active' : '' }}"><a class="nav-link"
-        href="{{ Route('user.setpassword') }}"><i class="fas fa-lock"></i> <span>Password</span></a></li>
-    </ul>
 </aside>

@@ -25,7 +25,6 @@ class UsersSeeder extends Seeder
         $users->password = bcrypt('123');
         $users->status = 'aktif';
         $users->save();
-
         User::create([
             'uuid' => Uuid::uuid4()->toString(),
             'name' => 'Mohamad Rizky Isa',

@@ -54,15 +54,24 @@
                                 <div class="form-group">
                                     <label>Password Lama</label>
                                     <input type="text" placeholder="Password Lama"  name="old" class="form-control">
+                                    @error('old')
+                                        <small class="text-danger">{{$message}}</small>
+                                    @enderror
                                 </div>
                                 
                                 <div class="form-group">
                                     <label>Password Baru</label>
                                     <input type="text" placeholder="Password Baru" name="new" class="form-control">
+                                    @error('new')
+                                        <small class="text-danger">{{$message}}</small>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label>Konfirmasi Password</label>
                                     <input type="text" placeholder="Konfirmasi Password" name="confirm" class="form-control">
+                                    @error('confirm')
+                                        <small class="text-danger">{{$message}}</small>
+                                    @enderror
                                 </div>
                                 <button class="btn btn-primary mt-1">Simpan</button>
                             </form>

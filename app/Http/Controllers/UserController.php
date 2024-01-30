@@ -86,17 +86,28 @@ class UserController extends Controller
             'old' => 'required',
             'new' => 'required|min:8',
             'confirm' => 'required|same:new'
+        ],[
+            'old.required' => 'Password saat ini tidak boleh kosong',
+            'new.required' => 'Password baru tidak boleh kosong',
+            'new.min' => 'Password minimal 8 karakter',
+            'confirm.same' => 'Konfirmasi password tidak sama',
         ]);
-        $user = User::find(Auth::user()->id);
-        if (!Hash::check($request->old, $user->new)) {
-            return redirect()->back()->with('error','Password saat ini tidak cocok');
+        if(Hash::check($request->old,Auth::user()->password))
+        {
+            $user = User::find(Auth::user()->id)->update([
+                'password' => Hash::make($request->new)
+            ]);
+            if($user)
+            {
+                return redirect()->back()->with('success', 'Password berhasil diperbarui');
+            }else{
+                return redirect()->back()->with('error', 'Password gagal diperbarui');
+            }
+        }else{
+            // echo "salah";
+            return redirect()->back()->with('error', 'Password lama tidak sesuai');
         }
-        // Jika password saat ini sesuai, perbarui password
-        $user->update([
-            'password' => bcrypt($request->new),
-        ]);
-    
-        return redirect()->route('profile')->with('success', 'Password berhasil diperbarui');
+        
     }
 
     /**
