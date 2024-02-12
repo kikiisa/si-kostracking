@@ -82,7 +82,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <embed src="" type="application/pdf" height="600px" class="legalitasdoc w-100" frameborder="0"></embed>
+                    <embed src=""  height="600px" class="legalitasdoc w-100" frameborder="0"></embed>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
