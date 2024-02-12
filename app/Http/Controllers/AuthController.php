@@ -42,7 +42,7 @@ class AuthController extends Controller
             'password' => 'required|min:8',
             'phone' => 'required|min:12',
             'confirm' => 'required|same:password',
-            'legalitas' => 'required|mimes:jpg,png,webp|max:2048',
+            'legalitas' => 'required|mimes:pdf|max:2048',
         ],[
             'name.required' => 'Nama Tidak Boleh Kosong',
             'email.required' => 'Email Tidak Boleh Kosong',
@@ -55,7 +55,7 @@ class AuthController extends Controller
             'confirm.required' => 'Konfirmasi Password Tidak Boleh Kosong',
             'confirm.same' => 'Konfirmasi Password Tidak Sama',
             'legalitas.required' => 'Legalitas Tidak Boleh Kosong',
-            'legalitas.mimes' => 'Legalitas Harus Berupa jpg,png,webp',
+            'legalitas.mimes' => 'Legalitas Harus Berupa PDF',
             'legalitas.max' => 'Legalitas Maksimal 2 MB',
         ]);
         $files = $request->file("legalitas");
