@@ -1,12 +1,9 @@
 <?php
-
 namespace Database\Seeders;
-
 use Illuminate\Database\Seeder;
 use App\Models\User as pengguna;
 use App\Models\User;
 use Ramsey\Uuid\Uuid;
-
 class UsersSeeder extends Seeder
 {
     /**

@@ -50,6 +50,7 @@
                                             <td>{{$item->role}}</td>
                                             <td>
                                                 <a href="javascript:void(0)" class="btn btn-primary" onclick="return openModal('{{$item->dokument}}')">Dokument Legalitas</a>
+                                            
                                             </td>
                                             <td>
                                                 <form action="{{Route('user.delete',$item->id)}}" method="post">
@@ -81,7 +82,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <iframe src="" type="application/pdf" height="600px" class="legalitasdoc w-100" frameborder="0"></iframe>
+                    <embed src="" type="application/pdf" height="600px" class="legalitasdoc w-100" frameborder="0"></embed>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
