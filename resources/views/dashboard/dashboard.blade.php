@@ -3,7 +3,6 @@
     <section class="section">
         <div class="section-header">
             <h3>Selamat Datang, <strong>{{ Auth::user()->name }}</strong></h3>
-
         </div>
         <div class="section-body">
             <div class="row">
