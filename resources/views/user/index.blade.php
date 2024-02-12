@@ -49,8 +49,7 @@
                                             </td>
                                             <td>{{$item->role}}</td>
                                             <td>
-                                                {{-- <a href="javascript:void(0)" class="btn btn-primary" onclick="return openModal('{{$item->dokument}}')">Dokument Legalitas</a> --}}
-                                                <a href="{{asset($item->dokument)}}" class="btn btn-primary" >Dokument Legalitas</a>
+                                                <a href="javascript:void(0)" class="btn btn-primary" onclick="return openModal('{{$item->dokument}}')">Dokument Legalitas</a>
                                             
                                             </td>
                                             <td>
@@ -83,7 +82,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <embed src=""  height="600px" class="legalitasdoc w-100" frameborder="0"></embed>
+                    <iframe src="" type="application/pdf" height="600px" class="legalitasdoc w-100" frameborder="0"></iframe>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
