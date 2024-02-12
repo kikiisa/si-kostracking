@@ -49,7 +49,8 @@
                                             </td>
                                             <td>{{$item->role}}</td>
                                             <td>
-                                                <a href="javascript:void(0)" class="btn btn-primary" onclick="return openModal('{{$item->dokument}}')">Dokument Legalitas</a>
+                                                {{-- <a href="javascript:void(0)" class="btn btn-primary" onclick="return openModal('{{$item->dokument}}')">Dokument Legalitas</a> --}}
+                                                <a href="{{asset($item->dokument)}}" class="btn btn-primary" >Dokument Legalitas</a>
                                             
                                             </td>
                                             <td>
