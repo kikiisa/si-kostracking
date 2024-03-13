@@ -255,6 +255,7 @@
                                 riseOnHover: true,
                                 icon: L.icon({
                                     iconUrl: `/theme/img/placeholder.png`,
+                                    iconSize: [35,35]
                                 })
                             }).addTo(map)
                                 .bindPopup(
