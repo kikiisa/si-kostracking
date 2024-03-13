@@ -171,7 +171,12 @@
                 var longitude = position.coords.longitude;
                 let ResultPosition = new L.Routing.Waypoint(L.latLng(latitude, longitude))
                 let BestTitik = []
-                L.marker([latitude, longitude]).addTo(map)
+                L.marker([latitude, longitude],{
+                    riseOnHover: true,
+                    icon: L.icon({
+                        iconUrl: `/theme/img/placeholder.png`,
+                        iconSize: [35,35]
+                }).addTo(map)
                     .bindPopup(
                         `<strong>Posisi Anda Saat Ini</strong>`
                     ).openPopup();
@@ -251,13 +256,7 @@
                                 ],
                                 showAttribution: false
                             }).addTo(map);
-                            L.marker([minValue.lat, minValue.lon],{
-                                riseOnHover: true,
-                                icon: L.icon({
-                                    iconUrl: `/theme/img/placeholder.png`,
-                                    iconSize: [35,35]
-                                })
-                            }).addTo(map)
+                            L.marker([minValue.lat, minValue.lon]).addTo(map)
                                 .bindPopup(
                                     `<strong>Kos Terdekat Saat Ini</strong>`
                                 ).openPopup();
