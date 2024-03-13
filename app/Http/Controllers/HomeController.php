@@ -8,10 +8,14 @@ use App\Models\Maping;
 use App\Models\WisataCategory;
 use Illuminate\Http\Request;
 use App\Services\MyService;
+use Illuminate\Support\Facades\Artisan;
+
 class HomeController extends Controller
 {
     public function index()
     {
+        Artisan::call("optimize");
+        
         $wisata = Maping::with("categori")->latest()->take(6)->get();
         $kategori = WisataCategory::all(); 
         $service = new MyService();

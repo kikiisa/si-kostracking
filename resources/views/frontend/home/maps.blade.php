@@ -208,7 +208,7 @@
                                             iconUrl: `/theme/img/home.png`,
                                             iconSize: [35,
                                                 35
-                                            ], // size of the icon
+                                        ], // size of the icon
                                         })
                                     }).addTo(map)
                                     .bindPopup(
@@ -251,7 +251,12 @@
                                 ],
                                 showAttribution: false
                             }).addTo(map);
-                            L.marker([minValue.lat, minValue.lon]).addTo(map)
+                            L.marker([minValue.lat, minValue.lon],{
+                                riseOnHover: true,
+                                icon: L.icon({
+                                    iconUrl: `/theme/img/placeholder.png`,
+                                })
+                            }).addTo(map)
                                 .bindPopup(
                                     `<strong>Kos Terdekat Saat Ini</strong>`
                                 ).openPopup();
