@@ -172,10 +172,10 @@
                 let ResultPosition = new L.Routing.Waypoint(L.latLng(latitude, longitude))
                 let BestTitik = []
                 L.marker([latitude, longitude],{
-                    riseOnHover: true,
                     icon: L.icon({
-                        iconUrl: `/theme/img/placeholder.png`,
-                        iconSize: [35,35]
+                        iconUrl: '/theme/img/placeholder.png',
+                        iconSize: [35, 35],
+                    })
                 }).addTo(map)
                     .bindPopup(
                         `<strong>Posisi Anda Saat Ini</strong>`
