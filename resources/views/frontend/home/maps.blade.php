@@ -344,6 +344,9 @@
         let loading = document.querySelector("#loading")
         let produkAll = document.querySelector("#recomended")
         let html = "";
+        loading.innerHTML = ` <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>`
         const uniqueTitiks = new Set();
         const formatter = new Intl.NumberFormat('id-ID', {
             style: 'currency',
@@ -357,9 +360,7 @@
                 var longitude = position.coords.longitude;
                 let ResultPosition = new L.Routing.Waypoint(L.latLng(latitude, longitude))
                 let BestTitik = []
-                loading.innerHTML = ` <div class="spinner-border" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>`
+                
                 fetch('/api-peta')
                     .then(response => response.json())
                     .then((data) => {
