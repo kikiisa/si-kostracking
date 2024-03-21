@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get("/v1/detail/{id}",[PemetaanController::class,'detail_wisata'])->name("detailApi");
+Route::get("/v1/api-maps/{id1}/{id2}",[PemetaanController::class,'rest_petaByLatAndLot']);
