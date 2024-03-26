@@ -22,6 +22,7 @@
                         <div class="card-body bg-wraper">
                             <div class="text-center">
                                 <a href="{{Route('detail.wisata',$item->uuid)}}" style="text-decoration: none;" class="text-dark"><strong>{{$item->nama_titik}}</strong></a>
+                                
                                 <p class="text-muted ">{{$item->deskripsi}}</p>
                                 @if ($item->diskon > 0)
                                 <h6><span class="price-diskon text-danger">Rp {{number_format($item->price, 0, ',', '.')}} </span> / <span class="text-muted"> {{$item->diskon}}%</span></h6>
